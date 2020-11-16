@@ -1,0 +1,130 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+body {
+  user-select: none;
+  font-family: 'Righteous', cursive;
+}
+
+#mobile {
+  display: none;
+  font-size: 5em;
+}
+
+#desktop {
+  height: 100%;
+  display: grid;
+  grid-auto-flow: dense;
+  grid-template: "h   h" auto
+                 "l   r" 1fr /
+                 1fr 1fr;
+}
+
+@media only screen and (max-width: 730px) {
+  #mobile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 1ch;
+  }
+  #desktop {
+    display: none;
+  }
+}
+
+#logo {
+  transform: translateY(4px);
+  height: 2em;
+}
+
+header {
+  grid-area: h;
+  padding: 1.25ch;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: grey;
+}
+
+#title {
+  font-size: 2.25em;
+}
+
+label {
+  display: inline-block;
+  background-color: #ddd;
+  margin: 4px;
+  padding: 9px;
+  cursor: pointer;
+}
+
+#tool-div label {
+  border-radius: 4px;
+}
+
+#color-div label {
+  border-radius: 2em;
+}
+
+#black-color {
+  background-color: black;
+}
+
+#red-color {
+  background-color: red;
+}
+
+#blue-color{
+  background-color: blue;
+}
+
+#black-color, #blue-color, #red-color {
+  padding: 0.5em;
+  border-radius: 0.5em;
+}
+
+#tool-div, #color-div, #page-div {
+  margin-left: 3ch;
+}
+
+#previous-button, #next-button{
+  /* border: none;  */
+  padding: 1em;
+  border-radius: 2em; 
+  cursor: pointer;
+  outline: none;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+
+input[type="radio"]:checked+label {
+  background-color: #fff;
+}
+
+#options-div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#left-canvas {
+  grid-area: l;
+}
+
+#right-canvas {
+  grid-area: r;
+}
+
+#left-canvas, #right-canvas {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
